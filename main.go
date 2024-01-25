@@ -1,17 +1,19 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	"github.com/labstack/echo/v4"
+	"log"
+	"github.com/gofiber/fiber/v2"
 )
-func main(){
-	e := echo.New()
-	e.GET("/",func(c echo.Context) error {
-		return c.JSON(http.StatusOK, map[string]string{
-			"message": "Halo selamat datang Ady, selamat belajar",
+
+func main() {
+	app := fiber.New()
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.Status(200).JSON(fiber.Map{
+			"message": "Halo ady, server is running on port 8000",
 		})
 	})
-	e.Start(":8000")
-	fmt.Println("server berjalan di port 8000")
+	err := app.Listen(":8000")
+	if err != nil {
+		log.Fatal(err)
+	}
 }

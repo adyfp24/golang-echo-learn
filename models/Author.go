@@ -1,13 +1,12 @@
 package models
 
 import (
-	"time"
+	"gorm.io/gorm"
 )
 
 type Author struct {
-	ID        uint 		`gorm:"primaryKey"`
-	Nama      string
-	Usia      int
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	gorm.Model
+	ID   uint `gorm:"primaryKey"`
+	Nama string
+	Usia int
 }

@@ -8,8 +8,9 @@ import(
 )
 
 func RunMigration(){
-	db, nil := database.InitDB()
-	err := db.AutoMigrate(&models.Author{})
+	db, err := database.InitDB()
+	err = db.AutoMigrate(&models.Author{}, &models.Book{})
+	db.Exec("ALTER TABLE books ADD CONSTRAINT fk_author_id FOREIGN KEY (author_id) REFERENCES authors(id) ON DELETE CASCADE ON UPDATE CASCADE")
 	if err != nil {
 		log.Print(err)
 	}

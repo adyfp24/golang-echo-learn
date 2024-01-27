@@ -6,7 +6,6 @@ import (
 
 type Author struct {
 	gorm.Model
-	ID   uint `gorm:"primaryKey"`
 	Nama string
 	Usia int
 }

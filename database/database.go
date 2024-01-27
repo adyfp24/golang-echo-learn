@@ -15,7 +15,7 @@ func InitDB() (*gorm.DB, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("Koneksi tersambung")
+	fmt.Println("Koneksi terhubung")
 
 	DB = db
 

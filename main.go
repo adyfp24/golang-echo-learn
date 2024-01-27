@@ -12,7 +12,6 @@ func main() {
 	migrations.RunMigration()
 
 	app := fiber.New()
-
 	app.Use(cors.New())
 
 	routes.RouteInit(app)
@@ -22,10 +21,10 @@ func main() {
 	})
 	
 	err := app.Listen(":8000")
-
 	if err != nil {
 		log.Fatal(err)
 	}
 }
-
 // kill -9 $(lsof -i :8000 -t)
+
+

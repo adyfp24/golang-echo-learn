@@ -12,10 +12,10 @@ func RouteInit(app *fiber.App){
 
 	r.Get("/author", handlers.GetAllAuthor)
 
-	r.Get("author/:idAuthor", handlers.GetAuthorById)
+	r.Get("author/:authorId", handlers.GetAuthorById)
 
-	r.Put("author/:idAuthor", handlers.UpdateAuthor)
+	r.Put("author/:authorId", handlers.UpdateAuthor)
 
-	r.Delete("author/:idAuthor", handlers.DeleteAuthor)
+	r.Delete("author/:authorId", handlers.DeleteAuthor)
 }
 

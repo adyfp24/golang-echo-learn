@@ -1,0 +1,1 @@
+Ini merupakan repository dimana saya belajar membuat REST API dengan Golang dan menggunakan framework fiber serta ORM gorm, menggunakan database mysql saya melakukan operasi CRUD dimana kita dapat membuat, menampilkan, mengupdate dan menghapus data author dan books yang saling berelasi. Golang menurut saya dapat melatih clean code dan disiplin serta efesiensi penulisan
